@@ -1,0 +1,36 @@
+{
+  "name": "testusdm-minter",
+  "version": "1.0.0",
+  "description": "TestUSDM token minting and distribution for Cardano Preprod/Preview",
+  "type": "module",
+  "main": "dist/mint-testusdm.js",
+  "scripts": {
+    "build": "tsc",
+    "mint": "npm run build && node dist/mint-testusdm.js mint",
+    "burn": "npm run build && node dist/mint-testusdm.js burn",
+    "distribute": "npm run build && node dist/mint-testusdm.js distribute",
+    "balance": "npm run build && node dist/mint-testusdm.js balance",
+    "faucet": "npm run build && node dist/faucet-server.js",
+    "test": "npm run build && node dist/test-marketplace.js",
+    "wallet:generate": "npm run build && node dist/wallet-utils.js generate",
+    "wallet:import": "npm run build && node dist/wallet-utils.js import",
+    "wallet:info": "npm run build && node dist/wallet-utils.js info"
+  },
+  "keywords": [
+    "cardano",
+    "blockchain",
+    "token",
+    "stablecoin",
+    "testusdm"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@lucid-evolution/lucid": "^0.4.29",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}
