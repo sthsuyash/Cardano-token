@@ -1,0 +1,27 @@
+name: testusdm-stablecoin
+
+services:
+  testusdm:
+    build: .
+    container_name: testusdm-minter
+    volumes:
+      - ./.env:/app/.env:ro
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+
+  faucet:
+    build: .
+    container_name: testusdm-faucet
+    volumes:
+      - ./.env:/app/.env:ro
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    command: npm run faucet
+    profiles:
+      - faucet
